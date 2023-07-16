@@ -1,0 +1,369 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/course/all": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all courses",
+                "operationId": "getAllCourse",
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/course/store": {
+            "post": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Store current course",
+                "operationId": "storeCourse",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "course_name": "test_course",
+                                "description": "test_description",
+                                "teacher": "test_teacher"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/course/show": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get current course",
+                "operationId": "getCurrentCourse",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Course id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/course/update": {
+            "put": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Update course",
+                "operationId": "updateCourse",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "id": 1,
+                                "course_name": "test_course",
+                                "description": "test_description",
+                                "teacher": "test_teacher"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/course/delete": {
+            "delete": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Delete current course",
+                "operationId": "deleteCourse",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Customer id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/all": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Get all student",
+                "operationId": "getAllStudents",
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                }
+            }
+        },
+        "/api/student/store": {
+            "post": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Store current student",
+                "operationId": "storeStudent",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "first_name": "test_name",
+                                "last_name": "test_last",
+                                "gender": "M",
+                                "date_of_birth": "2002-05-06"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/show": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Get current student",
+                "operationId": "getCurrentStudent",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Customer id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/update": {
+            "put": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Update student",
+                "operationId": "updateStudent",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "id": 1,
+                                "first_name": "name_test",
+                                "last_name": "last_test",
+                                "gender": "M",
+                                "date_of_birth": "2003-05-06"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/delete": {
+            "delete": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Delete current student",
+                "operationId": "deleteStudent",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Customer id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/assign": {
+            "post": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Assign student",
+                "operationId": "assignStudent",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "studentId": 6,
+                                "courseId": 6
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/student/unsign": {
+            "delete": {
+                "tags": [
+                    "Student"
+                ],
+                "summary": "Unsign current student",
+                "operationId": "unsignStudent",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Customer id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    }
+}

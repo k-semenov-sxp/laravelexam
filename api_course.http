@@ -1,0 +1,48 @@
+POST http://127.0.0.1:8000/api/course/store
+Content-Type: application/x-www-form-urlencoded
+
+course_name=test_course&description=test_description&teacher=test_teacher
+
+> {% client.test("Status", function() {
+        client.assert(response.status === 201)
+    }) %}
+
+###
+GET http://localhost:8000/api/course/all
+Accept: application/json
+
+> {% client.test("Status", function() {
+        client.assert(response.status === 200)
+    }) %}
+
+###
+
+GET http://localhost:8000/api/course/show?id=1
+Accept: application/json
+
+
+> {% client.test("Status", function() {
+        client.assert(response.status === 200)
+    }) %}
+
+###
+
+PUT http://127.0.0.1:8000/api/course/update
+Content-Type: application/x-www-form-urlencoded
+
+id=11&course_name=test_course&description=test_description&teacher=test_teacher
+
+
+> {% client.test("Status", function() {
+        client.assert(response.status === 200)
+    }) %}
+###
+
+DELETE http://127.0.0.1:8000/api/course/delete
+Content-Type: application/x-www-form-urlencoded
+
+id=3
+
+> {% client.test("Status", function() {
+        client.assert(response.status === 200)
+    }) %}
