@@ -20,7 +20,7 @@
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -47,13 +47,23 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Everything is fine"
+                        "description": "Everything is fine",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "course_name": "test_course",
+                                    "description": "test_description",
+                                    "teacher": "test_teacher"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -78,13 +88,23 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Everything is fine"
+                        "description": "Everything is fine",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "course_name": "test_course",
+                                    "description": "test_description",
+                                    "teacher": "test_teacher"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -118,7 +138,7 @@
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -142,14 +162,14 @@
                     }
                 ],
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "Everything is fine"
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -166,7 +186,7 @@
                         "description": "Everything is fine"
                     },
                     "404": {
-                        "description": "Page not found"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -194,13 +214,24 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Everything is fine"
+                        "description": "Everything is fine",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "first_name": "test_name",
+                                    "last_name": "test_last",
+                                    "gender": "M",
+                                    "date_of_birth": "2002-05-06"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -225,13 +256,24 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Everything is fine"
+                        "description": "Everything is fine",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "first_name": "test_name",
+                                    "last_name": "test_last",
+                                    "gender": "M",
+                                    "date_of_birth": "2002-05-06"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -266,7 +308,7 @@
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -290,14 +332,14 @@
                     }
                 ],
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "Everything is fine"
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -323,13 +365,22 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Everything is fine"
+                        "description": "Everything is fine",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "studentId": 6,
+                                    "courseId": 6
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }
@@ -353,14 +404,14 @@
                     }
                 ],
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "Everything is fine"
                     },
                     "404": {
                         "description": "Page not found"
                     },
                     "500": {
-                        "description": "Server error"
+                        "description": "Internal Server Error"
                     }
                 }
             }

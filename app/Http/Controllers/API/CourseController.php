@@ -29,7 +29,7 @@ class CourseController extends Controller
         responses: [
             new Response(response: 200, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ]
     )]
     public function index(CourseService $courseService)
@@ -48,9 +48,15 @@ class CourseController extends Controller
             'teacher' => 'test_teacher',
         ])),
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 200, description: 'Everything is fine',
+                content: new JsonContent(example: [
+                    'course_name' => 'test_course',
+                    'description' => 'test_description',
+                    'teacher' => 'test_teacher',
+                ])
+            ),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function store(CourseService $courseService, CourseStoreRequest $request)
@@ -67,9 +73,15 @@ class CourseController extends Controller
             new Parameter(in: 'query', name: 'id', required: true, description: 'Course id', schema: new Schema(type: 'integer'))
         ],
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 200, description: 'Everything is fine',
+                content: new JsonContent(example: [
+                    'course_name' => 'test_course',
+                    'description' => 'test_description',
+                    'teacher' => 'test_teacher',
+                ])
+            ),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function show(CourseService $courseService, CourseShowRequest $request)
@@ -91,7 +103,7 @@ class CourseController extends Controller
         responses: [
             new Response(response: 200, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function update(CourseService $courseService, CourseUpdateRequest $request)
@@ -108,9 +120,9 @@ class CourseController extends Controller
             new Parameter(in: 'query', name: 'id', required: true, description: 'Customer id', schema: new Schema(type: 'integer'))
         ],
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 201, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function delete(CourseService $courseService, CourseDeleteRequest $request)

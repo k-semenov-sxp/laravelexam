@@ -38,7 +38,7 @@ class StudentController extends Controller
         tags: ['Student'],
         responses: [
             new Response(response: 200, description: 'Everything is fine'),
-            new Response(response: 404, description: 'Page not found'),
+            new Response(response: 404, description: 'Internal Server Error'),
         ]
     )]
     public function index(StudentService $studentService)
@@ -58,9 +58,15 @@ class StudentController extends Controller
             'date_of_birth' => '2002-05-06',
         ])),
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 200, description: 'Everything is fine',
+                content: new JsonContent(example: [
+                    'first_name' => 'test_name',
+                    'last_name' => 'test_last',
+                    'gender' => 'M',
+                    'date_of_birth' => '2002-05-06',
+                ])),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function store(StudentService $studentService, StudentStoreRequest $request)
@@ -74,9 +80,15 @@ class StudentController extends Controller
         summary: 'Get current student',
         tags: ['Student'],
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 200, description: 'Everything is fine',
+                content: new JsonContent(example: [
+                    'first_name' => 'test_name',
+                    'last_name' => 'test_last',
+                    'gender' => 'M',
+                    'date_of_birth' => '2002-05-06',
+                ])),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
         parameters: [
             new Parameter(in: 'query', name: 'id', required: true, description: 'Customer id', schema: new Schema(type: 'integer'))
@@ -102,7 +114,7 @@ class StudentController extends Controller
         responses: [
             new Response(response: 200, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function update(StudentService $studentService, StudentUpdateRequest $request)
@@ -116,9 +128,9 @@ class StudentController extends Controller
         summary: 'Delete current student',
         tags: ['Student'],
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 201, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
         parameters: [
             new Parameter(in: 'query', name: 'id', required: true, description: 'Customer id', schema: new Schema(type: 'integer'))
@@ -139,9 +151,14 @@ class StudentController extends Controller
             'courseId' => 6,
         ])),
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 200, description: 'Everything is fine',
+                content: new JsonContent(example: [
+                    'studentId' => 6,
+                    'courseId' => 6,
+                ])
+            ),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ],
     )]
     public function assignStudent(StudentService $studentService, AssignStudentRequest $request)
@@ -158,9 +175,9 @@ class StudentController extends Controller
             new Parameter(in: 'query', name: 'id', required: true, description: 'Customer id', schema: new Schema(type: 'integer'))
         ],
         responses: [
-            new Response(response: 200, description: 'Everything is fine'),
+            new Response(response: 201, description: 'Everything is fine'),
             new Response(response: 404, description: 'Page not found'),
-            new Response(response: 500, description: 'Server error')
+            new Response(response: 500, description: 'Internal Server Error')
         ]
     )]
     public function unsignStudent(StudentService $studentService, UnsignStudentRequest $request)
